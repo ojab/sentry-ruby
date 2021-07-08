@@ -23,4 +23,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "sentry-ruby-core", "~> 4.6.0"
+  # the tests can only pass with resque >= 1.24
+  # but in case they failed because of test setup, I decide to specify a looser version
+  # if you find your version of resque not compatible with this gem, please open an issue
+  spec.add_dependency "resque", ">= 1.18"
 end
